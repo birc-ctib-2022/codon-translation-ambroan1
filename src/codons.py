@@ -36,6 +36,10 @@ def split_codons(dna: str) -> list[str] | None:
 
     """
     # FIXME: Implement the function
+
+    if dna == "":
+        return []
+
     if (len(dna) % 3) != 0:
         return None
 
@@ -69,6 +73,10 @@ def translate_codons(codons: list[str]) -> list[str]:
 
     """
     # FIXME: Implement the function
+
+    if codons == []:
+        return []
+
     amino_acids = []
 
     for codon in codons:
@@ -100,7 +108,7 @@ def translate_dna(dna: str) -> str:
     # FIXME: Implement the function
     if dna == "":
         return ""
-        
+
     codons = split_codons(dna)
     if codons == None:
         return None
