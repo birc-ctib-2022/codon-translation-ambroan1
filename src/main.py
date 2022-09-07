@@ -88,11 +88,14 @@ if __name__ == '__main__':
         case 2:
             # one argument
             print("Feature not implemented yet.", file=sys.stderr)
-            sys.exit(1)
+            #sys.exit(1)
+            infile = open("data/seqs.in", "r")
         case 3:
             # two arguments
             print("Feature not implemented yet.", file=sys.stderr)
-            sys.exit(1)
+            #sys.exit(1)
+            infile = open("data/seqs.in", "r")
+            outfile = open("my-output.out", "w")
         case _:
             # more than two arguments; that is an error
             print("Too many arguments.", file=sys.stderr)
