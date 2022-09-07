@@ -35,7 +35,6 @@ def split_codons(dna: str) -> list[str] | None:
     True
 
     """
-    # FIXME: Implement the function
 
     if dna == "":
         return []
@@ -44,9 +43,9 @@ def split_codons(dna: str) -> list[str] | None:
         return None
 
     triplets = []
-    while dna:
-        triplets.append(dna[:3])
-        dna = dna[3:]
+
+    for i in range(0,len(dna),3):
+        triplets.append(dna[i : i+3])
 
     return triplets
 
@@ -72,16 +71,16 @@ def translate_codons(codons: list[str]) -> list[str]:
     True
 
     """
-    # FIXME: Implement the function
 
     if codons == []:
         return []
 
     amino_acids = []
-
+    
     for codon in codons:
-        if (codon.upper() in CODON_MAP):
-            aa = CODON_MAP[codon.upper()] # handles upper case 
+        codon = codon.upper()
+        if (codon in CODON_MAP):
+            aa = CODON_MAP[codon] # handles upper case 
             amino_acids += aa
         else:
             return None
@@ -105,7 +104,6 @@ def translate_dna(dna: str) -> str:
     True
 
     """
-    # FIXME: Implement the function
     if dna == "":
         return ""
 
