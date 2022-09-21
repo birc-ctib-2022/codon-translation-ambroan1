@@ -42,12 +42,7 @@ def split_codons(dna: str) -> list[str] | None:
     if (len(dna) % 3) != 0:
         return None
 
-    triplets = []
-
-    for i in range(0,len(dna),3):
-        triplets.append(dna[i : i+3])
-
-    return triplets
+    return [ dna[i : i+3] for i in range(0, len(dna), 3) ]
 
 
 def translate_codons(codons: list[str]) -> list[str]:
